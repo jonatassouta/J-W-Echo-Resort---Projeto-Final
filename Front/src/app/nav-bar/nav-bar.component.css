@@ -1,0 +1,22 @@
+.nav-item {
+    display: flex;
+    align-items: center;
+    transition: 0.1s;
+}
+
+.nav-item:hover {
+    transition: 0.1s;
+    border-bottom: 5px solid blue;
+}
+
+.admin{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.admin:hover {
+    transition: 0.1s;
+    background-color: green;
+}

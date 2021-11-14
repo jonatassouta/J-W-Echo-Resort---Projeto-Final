@@ -1,0 +1,85 @@
+<div class="container-cad container-fluid">
+  <div class="row">
+    <div class="form col-md">
+      <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+        <input type="hidden" name="clienteID" [value]="cadastro.formDatacas.clienteID" />
+        <div class="row text-center">
+          <h1>Informações de Reserva</h1>
+        </div>
+        <div class="row">
+          <div class="col-md">
+            <div class="form-group">
+              <label>Nome do Cliente </label>
+              <input class="form-control form-control-sd" placeholder="Digite o nome" name="nome"
+              #nome="ngModel" [(ngModel)]="cadastro.formDatacas.nome" 
+              required [class.invalid]=" nome.invalid && nome.touched">
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Endereço de email</label>
+              <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Seu email" name="email" #email="ngModel" [(ngModel)]="cadastro.formDatacas.email" required [class.invalid]=" nome.invalid && nome.touched" >
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md">
+            <div class="form-group">
+              <label>Senha</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" name="senha" #senha="ngModel" [(ngModel)]="cadastro.formDatacas.senha" required>
+            </div>
+          </div>
+
+
+            <div class="col-md">
+              <div class="form-group">
+                <label>CPF</label>
+                <input class="form-control" placeholder="CPF" name="cpf" #cpf="ngModel" [(ngModel)]="cadastro.formDatacas.cpf" required maxlength="11" minlength="11" [class.invalid]="cpf.invalid && cpf.touched" >
+              </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md">
+            <div class="mb-3">
+              <label for="disabledSelect" class="form-label" id="select">Sexo</label>
+              <select id="disabledSelect" id="select-inpu" class="form-select" name="sexo" #sexo="ngModel" [(ngModel)]="cadastro.formDatacas.sexo" required>
+                <option value="homen">Homen</option>
+                <option value="mulher">Mulher</option>
+              </select>
+            </div>
+          </div>
+
+
+            <div class="col-md">
+              <div class="form-group">
+                <label >Telefone</label>
+                <input  type="tel"  class="form-control" placeholder="Telefone com DDD" name="telefone"  #telefone="ngModel" [(ngModel)]="cadastro.formDatacas.telefone" required maxlength="11" minlength="11" [class.invalid]=" telefone.invalid && telefone.touched" >
+              </div>
+            </div>
+        </div>
+    <br>
+
+       <!-- <div class="row">
+          <div class="col-md-3" style="margin-top: -30px;">
+            <div class="mb-3">
+              <label for="disabledSelect" class="form-label" id="select">Forma de Pagamento</label>
+              <select id="disabledSelect" id="select-inpu" class="form-select"  >
+                <option>Crédito</option>
+                <option>Débito</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md"></div>
+          <div class="col-md"></div>
+
+        </div>
+      -->
+
+        <button type="submit" class="btn btn-primary"(click)="service.DadosCadastro()" [disabled]="form.invalid">Cadastro</button>
+      </form>
+    </div>
+</div>

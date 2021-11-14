@@ -1,0 +1,30 @@
+<div class="body container-fluid">
+  <div class="row container-fluid" style="width:100vw; background-color: #EEEEEE; align-items: center;border-radius: 5px; padding: 10px;">
+    <div class="info col-md-8 " style="display: flex; justify-content: center;">
+      <!-- <div>
+        <h5>Nome: {{service.rNome}} </h5>
+        <h5>Data de Entrada: {{service.DataEntrada}}</h5>
+        <h5>Data de Saida: {{service.DataSaida}}</h5>
+        <h5>Tel: {{service.rTelefone}}</h5>
+        <h5>Forma de Pagamento: Crédito</h5>
+      </div> -->
+      <app-cadastro-usuario></app-cadastro-usuario>
+    </div>
+
+    <div class="detalhes col-md-4" style="padding: 10px; background-color: white;height: 451px; display: flex; justify-content: center; flex-direction: column; border-radius: 5px">
+      <div id="img">
+        <img src={{service.url}} alt="imagem do quarto selecionado">
+      </div>
+
+      <br>
+
+      <div id=#detalhes>
+        <p><b>Tipo do Quarto: </b>{{service.tipoQuarto}}</p>
+        <p><b>Data Entrada: </b>{{service.DataEntrada}}</p>
+        <p><b>Data Saida: </b>{{service.DataSaida}}</p>
+        <p><b>Preco Final: R$ </b>{{service.valorTotalReserva}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>

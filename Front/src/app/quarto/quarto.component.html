@@ -1,0 +1,90 @@
+<div class="container-cad container-fluid">
+  <div class="row">
+    <div class="form col-md">
+      <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmitt(form)">
+        <input type="hidden" name="quartoID" [value]="quar.formDataQuarto.quartoID" />
+        <div class="row text-center">
+          <h1>Formulario de cadastro quarto</h1>
+        </div>
+        <div class="row">
+          <div class="col-md">
+            <div class="form-group">
+              <label>Valor da Diaria</label>
+              <input class="form-control form-control-sd" placeholder="Digite o valor da diaria" name="diariaValor"
+              #diariaValor="ngModel" [(ngModel)]="quar.formDataQuarto.diariaValor" required [class.invalid]=" diariaValor.invalid && diariaValor.touched">
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="form-group">
+              <label>Tipo de Quarto</label>
+              <input class="form-control form-control-sd" placeholder="Tipo do Quarto" name="tipoQuarto"
+              #tipoQuarto="ngModel" [(ngModel)]="quar.formDataQuarto.tipoQuarto" required [class.invalid]=" tipoQuarto.invalid && tipoQuarto.touched">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md">
+            <div class="form-group">
+              <label>ocuMaxima</label>
+              <input class="form-control form-control-sd" placeholder="ocuMaxima" name="ocuMaxima"
+              #ocuMaxima="ngModel" [(ngModel)]="quar.formDataQuarto.ocuMaxima" required [class.invalid]=" ocuMaxima.invalid && ocuMaxima.touched">
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-group">
+              <label>disponivel</label>
+              <input class="form-control form-control-sd" placeholder="disponivel" name="disponivel"
+              #disponivel="ngModel" [(ngModel)]="quar.formDataQuarto.disponivel" required [class.invalid]=" disponivel.invalid && disponivel.touched">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md">
+            <div class="form-group">
+              <label>imageUrl</label>
+              <input class="form-control form-control-sd" placeholder="imageUrl" name="imageUrl"
+              #imageUrl="ngModel" [(ngModel)]="quar.formDataQuarto.imageUrl" imageUrl [class.invalid]=" imageUrl.invalid && imageUrl.touched" value={{selecionarImg()}}>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid" ><i class="fas fa-save"></i>
+        </button>
+      </form>
+    </div>
+</div>
+<br>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Foto</th>
+      <th>Quarto</th>
+      <th>Detalhes</th>
+      <th>Preço</th>
+      <th></th>
+    </tr>
+  </thead>
+  <ng-container  >
+    <tbody *ngFor="let quarto of service.list">
+        <tr  alt="" class="h-100">
+          <td><img src="/assets/img/Quartos/{{quarto.imageUrl}}" style="width: 500px; border-radius: 5px;" alt="Img Quarto"></td>
+          <td (click)="povuarForm(quarto)">{{quarto.tipoQuarto}}</td>
+          <td (click)="povuarForm(quarto)">{{quarto.ocuMaxima}}</td>
+          <td (click)="povuarForm(quarto)">{{quarto.diariaValor}}</td>
+          <td>
+            <button class="btn btn-danger"(click)="onDelete(quarto.quartoID)"><i class="fas fa-trash-alt"></i></button>
+            <button class="btn btn-primary"(click)="povuarForm(quarto)"><i class="fas fa-edit"></i></button>
+          </td>
+        </tr>
+      </tbody>
+  </ng-container>
+  <tfoot >
+    <tr *ngIf="service.list == null">
+      <td colspan="8">
+        <h4>Nenhum quarto disponível</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>

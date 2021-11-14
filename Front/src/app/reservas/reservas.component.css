@@ -1,0 +1,49 @@
+
+.body{
+  background-color: #EEEEEE;
+
+}
+
+.container.reserva {
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.img-topo {
+  display: block;
+  height: 800px;
+
+}
+
+.img-topo img {
+  height: 100%;
+  width: 100%;
+}
+
+.check-in.container
+{
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: white;
+  height: 130px;
+  color: black;
+}
+
+input {
+  height: 48px;
+ border: 1px solid black;
+ border-radius: 5px;
+ color: black;
+}
+
+select {
+  margin-top: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+}
+
+

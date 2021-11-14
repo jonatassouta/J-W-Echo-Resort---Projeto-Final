@@ -1,0 +1,240 @@
+<!-- Inicio Header -->
+
+<div class="img-header">
+  <div style="background: linear-gradient(rgba(0,0,0,.3),rgba(164, 117, 106, .2)100%); height: 902px;">
+    <div class="header">
+      <div id="texto-header">
+        <h1>
+          Que tal tirar um descanço, em um lugar de tirar o folego.
+        </h1>
+      </div>
+    </div>
+
+
+    <div class="check-in container">
+      <div class="row">
+        <div class="col-md">
+          <label for="">Data de Entrada*</label><br>
+          <input type="date" data-type="datepicker" placeholder="Check in" [(ngModel)]="DataEntrada">
+        </div>
+        <div class="col-md">
+          <label for="">Data de Saida*</label><br>
+          <input type="date" data-type="datepicker" placeholder="Check in">
+        </div>
+
+        <div class="col-md">
+          <label for=""></label><br>
+          <select name="Adulto" >
+            <option value="bota">1 Adulto</option>
+            <option value="fla">2 Adultos</option>
+            <option value="flu">3 Adultos</option>
+            <option value="vasco">4 Adultos</option>
+          </select>
+        </div>
+        <div class="col-md">
+          <label for=""></label><br>
+          <select name="Criancas">
+            <option value="bota">Nenhuma Criança</option>
+            <option value="fla">1</option>
+            <option value="flu">2</option>
+            <option value="vasco">3</option>
+            </select>
+        </div>
+        <div class="col-md">
+          <label for=""></label><br>
+          <button type="button" class="btn btn-light" style="width: 100%; height: 47px;" routerLink="cadastro-usuario" [routerLink]="['/reserva']" routerLinkActive="router-link-active">Pesquisar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fim Header -->
+
+<!-- Inicio Conteudo -->
+
+<div class="container">
+  <div class="conteudo " >
+    <div class="row" style="height: 513px; margin-top: auto; margin-bottom: auto; ">
+      <div class="col-md">
+        <img src="../../assets/img/Rolax/1.webp" alt="" style="width: 451px;">
+      </div>
+      <div class="col-md" style="align-items: center; display: flex; line-height: 28px;">
+        <div>
+          <h2>
+            Luxo e conforto Nossos serviços e maravilhas de tirar o folego
+          </h2>
+
+          <br>
+
+          <p>O conceito e serviço dos melhores hotéis de luxo das Astúrias nos nossos sofisticados quartos Urban Double e Unique Junior Suite, com possibilidade de desfrutar de um terraço mobilado nos nossos Double Urban Loft e Unique Junior Loft Suite.</p>
+
+          <br>
+
+          <button type="button" class="btn btn-outline-info" style="width: 170px; height: 50px;">Saiba Mais</button>
+        </div>
+      </div>
+      <div class="col-md img-io">
+        <img src="../../assets/img/Rolax/2.webp" alt="" style="width: 261px;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Inicio Carrocel -->
+  <div class="conteudo" style="height: 600px; margin-bottom: 60px;">
+    <div class="row container">
+      <h2>Nossos quartos</h2>
+      <p>O conceito e o serviço dos melhores <br> hotéis de luxo nas Astúrias nos nossos sofisticados.</p>
+
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide><img src="../../assets/img/Quartos/1.jpg" alt=""></ng-template>
+        <ng-template carouselSlide><img src="../../assets/img/Quartos/2.jpg" alt=""></ng-template>
+        <ng-template carouselSlide><img src="../../assets/img/Quartos/3.jpg" alt=""></ng-template>
+        <ng-template carouselSlide><img src="../../assets/img/Quartos/4.jpg" alt=""></ng-template>
+        <ng-template carouselSlide><img src="../../assets/img/Quartos/5.jpg" alt=""></ng-template>
+        <ng-template carouselSlide><img src="../../assets/img/Quartos/6.jpg" alt=""></ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+
+  <!-- Fim carocel -->
+
+  <div style="height: 200px;">
+    <div style="text-align: center; width: 780px; margin: auto;">
+      <h2>Cercado por galerias, boutiques, restaurantes e cafés, nosso hotel é um centro de energia e estilo.</h2><br>
+      <a href="#">Encontre um quarto para você</a>
+    </div>
+  </div>
+
+  <div class="conteudo se" style="height: 500px; color: white;">
+    <div class="row" style=" text-align: center;">
+      <div class="col-md"><img src="../../assets/img/Rolax/e.webp" alt=""></div>
+      <div class="col-md" style="background-color: #191514; display: flex; align-items: center; flex-direction: column; justify-content: center; " >
+        <h2>Aproveite nossas especialidades sazonais.</h2>
+        <p>O conceito e serviço dos melhores hotéis de luxo das Astúrias nos nossos sofisticados quartos Urban Double e Unique Junior Suite, com possibilidade de desfrutar de um terraço mobilado nos nossos Double Urban Loft e Unique Junior Loft Suite.</p>
+
+        <button type="button" class="btn btn-outline-secondary">Saiba Mais</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Inicio Carocel -->
+
+  <div id="carouselExampleCaptions" class="carousel slide " style="max-width: 100%;"  sdata-bs-ride="carousel" >
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../assets/img/5.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Ambiente Aconchegante</h5>
+          <p>O lugar perfeito para você descançar a mente.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/img/6.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Total Conforto</h5>
+          <p>Ambiente aconchegnte para você e sua família.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/img/este.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0,0,0,.6);">
+          <h5>Ambiente Histórico</h5>
+          <p>Oportunidade unica de conhecer um dos lugares historicos mais bem preservados do Brasil.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Fim carrocel -->
+
+<!-- Inicio cards -->
+
+  <div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
+    <div class="card d-flex position-relative flex-column">
+        <div class='imgContainer'> <img src='https://images.pexels.com/photos/1456268/pexels-photo-1456268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'> </div>
+        <div class="content">
+            <h2>Card One</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </div>
+    <div class="card d-flex position-relative flex-column">
+        <div class='imgContainer'> <img src='https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'> </div>
+        <div class="content">
+            <h2>Card Two</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </div>
+    <div class="card d-flex position-relative flex-column">
+        <div class='imgContainer'> <img src='https://images.pexels.com/photos/847483/pexels-photo-847483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'> </div>
+        <div class="content">
+            <h2>Card Three</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Fim cards -->
+
+<!-- Inicio Footer -->
+
+<div class="d-flex flex-column" style="margin-top: 100px; background-color: #212529; height: 24px;">
+
+    <!-- FOOTER -->
+    bloco<footer class="w-100 py-4 flex-shrink-0">
+        <div class="container py-4">
+            <div class="row gy-4 gx-5">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="h1 text-white">FB.</h5>
+                    <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Bootstrapious.com</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Quick links</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Get started</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Quick links</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Get started</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Newsletter</h5>
+                    <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <form action="#">
+                        <div class="input-group mb-3">
+                            <input class="form-control" type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Fim Footer -->

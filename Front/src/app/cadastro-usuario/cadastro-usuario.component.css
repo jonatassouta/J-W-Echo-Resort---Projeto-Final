@@ -1,0 +1,48 @@
+.container-cad {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EEEEEE;
+}
+
+.form {
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  width: 800px;
+}
+
+select {
+  margin-top: -8px;
+  height: 38px;
+  border: 1px solid #545454;
+}
+
+button {
+  width: 100%;
+}
+
+input {
+  margin-top: 5px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+#select-inpu {
+  margin-top: -2px;
+}
+
+.detalhes {
+  background-color: white;
+  height: 517px;
+  width: 300px;
+}
+
+img {
+  border-radius: 5px;
+  width: 100%;
+}

@@ -1,0 +1,90 @@
+<div class="body">
+  <div class="img-topo">
+    <img src="./../../assets/img/13.jpg" alt="">
+  </div>
+
+  <div class="check-in container">
+    <div class="row">
+      <div class="col-md">
+        <label for="">Data de Entrada*</label><br>
+        <input type="date" data-type="datepicker" placeholder="Check in" [(ngModel)]="DataEntrada">
+      </div>
+      <div class="col-md">
+        <label for="">Data de Saida*</label><br>
+        <input type="date" data-type="datepicker" placeholder="Check in" [(ngModel)]="DataSaida" >
+      </div>
+
+      <div class="col-md" style="display: fex; align-items: center; margin-top: 8px">
+        <label for=""></label><br>
+        <button type="button" class="btn btn-primary" style="width: 100%; height: 47px;"(click)="ver(DataHoje.toString())">Pesquisar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container reserva">
+
+    <!-- <div class="row">
+      <div class="col-md"  style="display: flex; align-items: end;">
+        <div class="form-inline">
+          <div class="form-group mb-2">
+            <label class="mr-2"></label><br>
+            <input type="text" class="form-control mr-2" placeholder="Buscar" [(ngModel)]="filtroLista">
+            <button class="btn btn-outline-success" >Buscar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="form-inline">
+          <div class="form-group mb-2">
+            <label>Tipo do quarto</label>
+            <select   class="form-select"  name="quartos" [(ngModel)]="filtroTipo" >
+              <option selected>Tipo de Quarto</option>
+              <option value="premium">Premium</option>
+              <option value="estandart">Standart</option>
+              <option value="economico">Economic</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <h3>Filtro: {{filtroLista}}</h3> -->
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Foto</th>
+          <th>Quarto</th>
+          <th>Detalhes</th>
+          <th>Preço</th>
+          <th></th>
+        </tr>
+      </thead>
+      <ng-container *ngIf="DataHoje.toString() < DataEntrada" >
+      <ng-container *ngIf="DataEntrada !='' && DataSaida != '' && DataSaida > DataEntrada ">        
+        <tbody *ngFor="let quarto of service.list">
+            <tr  *ngIf="quarto.disponivel.toUpperCase() == 'SIM';" alt="" class="h-100">
+              <td><img src="/assets/img/Quartos/{{quarto.imageUrl}}" style="width: 500px; border-radius: 5px;" alt="Img Quarto"></td>
+              <td (click)="povuarForm(quarto)">{{quarto.tipoQuarto}}</td>
+              <td (click)="povuarForm(quarto)">{{quarto.ocuMaxima}}</td>
+              <td (click)="povuarForm(quarto)">{{quarto.diariaValor}}</td>
+              <td>
+                <button #reservas routerLink="/finalizar-reserva" class="btn btn-primary" (click)="service.CalcularData(DataEntrada, DataSaida, quarto.diariaValor, quarto.imageUrl, quarto.tipoQuarto)">Reservar</button>
+              </td>
+            </tr>
+          </tbody>
+          </ng-container>
+        </ng-container>
+      
+      <tfoot >
+        <tr *ngIf="service.list == null">
+          <td colspan="8">
+            <h4>Nenhum quarto disponível</h4>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+</div>
+
