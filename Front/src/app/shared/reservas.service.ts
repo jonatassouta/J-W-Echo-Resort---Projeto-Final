@@ -20,7 +20,7 @@ export class ReservasService {
   formData: Reservas = new Reservas();
   list: Reservas[];
 
-  
+
 
   valor: number;
   DataEntrada: string;
@@ -57,7 +57,7 @@ export class ReservasService {
   getReservas(id: number){
     return this.http.get(`${this.baseURL}/${id}`)
   }
-
+ 
   pegarPreco(p : number) {
     this.valor = p
 
@@ -67,7 +67,7 @@ export class ReservasService {
   this.DataEntrada= dtEntrada;
   this.DataSaida = dtSaida;
   this.tipoQuarto = t;
-  
+
   if(dtEntrada != "" && dtSaida != ""){
   this.url = "/assets/img/Quartos/"+img;
 
@@ -83,7 +83,7 @@ export class ReservasService {
   }
 }
 
-  DadosCadastro(){    
+  DadosCadastro(){
     alert("Cadastrado com sucesso!")
     this.router.navigate(['/'])
 

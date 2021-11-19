@@ -1,6 +1,7 @@
 <div class="container-cad container-fluid">
   <div class="row">
     <div class="form col-md">
+
       <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmitt(form)">
         <input type="hidden" name="quartoID" [value]="quar.formDataQuarto.quartoID" />
         <div class="row text-center">
@@ -26,7 +27,7 @@
 
         <div class="row">
           <div class="col-md">
-            <div class="form-group">
+            <div class="form-group">z
               <label>ocuMaxima</label>
               <input class="form-control form-control-sd" placeholder="ocuMaxima" name="ocuMaxima"
               #ocuMaxima="ngModel" [(ngModel)]="quar.formDataQuarto.ocuMaxima" required [class.invalid]=" ocuMaxima.invalid && ocuMaxima.touched">

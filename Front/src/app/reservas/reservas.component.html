@@ -61,11 +61,11 @@
         </tr>
       </thead>
       <ng-container *ngIf="DataHoje.toString() < DataEntrada" >
-      <ng-container *ngIf="DataEntrada !='' && DataSaida != '' && DataSaida > DataEntrada ">        
+      <ng-container *ngIf="DataEntrada !='' && DataSaida != '' && DataSaida > DataEntrada ">
         <tbody *ngFor="let quarto of service.list">
             <tr  *ngIf="quarto.disponivel.toUpperCase() == 'SIM';" alt="" class="h-100">
               <td><img src="/assets/img/Quartos/{{quarto.imageUrl}}" style="width: 500px; border-radius: 5px;" alt="Img Quarto"></td>
-              <td (click)="povuarForm(quarto)">{{quarto.tipoQuarto}}</td>
+              <td (click)="povuarForm(quarto)">{{quarto.imageUrl}}</td>
               <td (click)="povuarForm(quarto)">{{quarto.ocuMaxima}}</td>
               <td (click)="povuarForm(quarto)">{{quarto.diariaValor}}</td>
               <td>
@@ -75,7 +75,7 @@
           </tbody>
           </ng-container>
         </ng-container>
-      
+
       <tfoot >
         <tr *ngIf="service.list == null">
           <td colspan="8">
